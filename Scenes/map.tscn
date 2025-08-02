@@ -94,11 +94,9 @@ texture_filter = 0
 size = Vector3(1, 3, 4)
 
 [node name="map" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.7971)
 script = ExtResource("1_tbn5i")
 
 [node name="top_floor" type="GridMap" parent="."]
-visible = false
 mesh_library = ExtResource("2_8ecpi")
 cell_size = Vector3(6, 2, 6)
 data = {
@@ -1401,7 +1399,6 @@ transform = Transform3D(1.39822e-06, -0.00239087, 0.999997, -0.000797053, 0.9999
 transform = Transform3D(1.39822e-06, -0.00239087, 0.999997, -0.000797053, 0.999997, 0.00239087, -1, -0.000797054, -5.0744e-07, 1.08074, 3, 0.0958495)
 
 [node name="basement" type="GridMap" parent="."]
-visible = false
 mesh_library = ExtResource("2_8ecpi")
 cell_size = Vector3(6, 2, 6)
 data = {

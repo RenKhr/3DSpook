@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://846fkm3naktt"]
 
-[ext_resource type="Script" uid="uid://dnbr2x8k5pskl" path="res://Scripts/MapItems/monitor_gui.gd" id="1_xuvwd"]
+[ext_resource type="Script" uid="uid://bw4ufo0g8q7nv" path="res://Scripts/MapItems/monitor_gui.gd" id="1_xuvwd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knygs"]
 bg_color = Color(0, 0.305882, 0.760784, 0.968627)
