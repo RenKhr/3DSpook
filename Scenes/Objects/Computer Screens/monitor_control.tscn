@@ -1,10 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://846fkm3naktt"]
 
 [ext_resource type="Script" path="res://Scripts/MapItems/monitor_gui.gd" id="1_xuvwd"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knygs"]
-bg_color = Color(0, 0.305882, 0.760784, 0.968627)
-corner_detail = 1
+[ext_resource type="Texture2D" uid="uid://bps8jtawih573" path="res://Resources/Textures/placholder/terminal_bg_1.png" id="2_rufkh"]
 
 [node name="MonitorControl" type="Control"]
 layout_mode = 3
@@ -18,21 +15,25 @@ script = ExtResource("1_xuvwd")
 layout_mode = 0
 offset_right = 512.0
 offset_bottom = 512.0
+color = Color(1, 1, 1, 0.705882)
 metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="."]
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.627451)
 layout_mode = 0
-offset_left = 64.0
-offset_top = 200.0
-offset_right = 246.0
-offset_bottom = 256.0
-text = "This here is a button"
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_top = 464.0
 offset_right = 512.0
 offset_bottom = 512.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_knygs")
+texture = ExtResource("2_rufkh")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 104.0
+offset_right = 324.0
+offset_bottom = 164.0
+pivot_offset = Vector2(90, 30)
+text = "This here is a button"
+icon_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

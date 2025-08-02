@@ -98,7 +98,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.7971)
 script = ExtResource("1_tbn5i")
 
 [node name="top_floor" type="GridMap" parent="."]
-visible = false
 mesh_library = ExtResource("2_8ecpi")
 cell_size = Vector3(6, 2, 6)
 data = {
@@ -666,6 +665,45 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5.5, -
 [node name="specimen_container6" parent="top_floor/specimen_room" instance=ExtResource("11_6desp")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 3.5, -1, -2.9971)
 
+[node name="door_down_1" parent="top_floor" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 7, -29.5)
+
+[node name="door_down_2" parent="top_floor" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 7, -71.7)
+
+[node name="Doors" type="Node3D" parent="top_floor"]
+visible = false
+
+[node name="door_command_1" parent="top_floor/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 7, -13)
+
+[node name="door_command_2" parent="top_floor/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 7, -24.5)
+
+[node name="door_lab_1_1" parent="top_floor/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 7, -27)
+
+[node name="door_lab_2_1" parent="top_floor/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7, 7, -63)
+
+[node name="door_lab_2_2" parent="top_floor/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.5, 7, -63)
+
+[node name="door_lab_1_2" parent="top_floor/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.5, 7, -27)
+
+[node name="door_hydro_1" parent="top_floor/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.4, 7, -63)
+
+[node name="door_hydro_2" parent="top_floor/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.4, 7, -33)
+
+[node name="door_obs" parent="top_floor/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 7, -71.7)
+
+[node name="door_closet" parent="top_floor/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3, 7, -66.3)
+
 [node name="ground_floor" type="GridMap" parent="."]
 mesh_library = ExtResource("2_8ecpi")
 cell_size = Vector3(6, 2, 6)
@@ -1067,7 +1105,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.0128, 7, -33)
 [node name="fan_noise129" parent="ground_floor/turbine_sounds" instance=ExtResource("20_in16i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.0128, 7, -39)
 
+[node name="door_down_1" parent="ground_floor" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -29.7971)
+
+[node name="door_down_2" parent="ground_floor" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -71.7971)
+
+[node name="door_up_1" parent="ground_floor" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -29.7971)
+
+[node name="door_up_2" parent="ground_floor" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -71.7971)
+
 [node name="Doors" type="Node3D" parent="ground_floor"]
+visible = false
 
 [node name="door" parent="ground_floor/Doors" instance=ExtResource("14_i2sor")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.8, 3, -14.9971)
@@ -1117,18 +1168,6 @@ transform = Transform3D(1.31134e-07, 6.5135e-16, 1, -7.45058e-09, 1, -4.44089e-1
 
 [node name="door_exit" parent="ground_floor/Doors" instance=ExtResource("14_i2sor")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3, 3, -1.8971)
-
-[node name="door_down_1" parent="ground_floor/Doors" instance=ExtResource("14_i2sor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -29.7971)
-
-[node name="door_down_2" parent="ground_floor/Doors" instance=ExtResource("14_i2sor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -71.7971)
-
-[node name="door_up_1" parent="ground_floor/Doors" instance=ExtResource("14_i2sor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -29.7971)
-
-[node name="door_up_2" parent="ground_floor/Doors" instance=ExtResource("14_i2sor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -71.7971)
 
 [node name="door_med_1" parent="ground_floor/Doors" instance=ExtResource("14_i2sor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 3, -29.7971)
@@ -1295,9 +1334,94 @@ transform = Transform3D(-0.166667, 0, -5.43069e-08, 0, 0.166667, 0, 5.43069e-08,
 [node name="lightCeiling3" parent="ground_floor/Entry/switch" instance=ExtResource("21_s0be3")]
 transform = Transform3D(-0.166667, 0, -5.43069e-08, 0, 0.166667, 0, 5.43069e-08, 0, -0.166667, 0.45, 0.45, 0.933333)
 
-[node name="Node3D3" type="Node3D" parent="ground_floor"]
+[node name="hallway_lights" type="Node3D" parent="ground_floor"]
 
-[node name="Node3D" type="Node3D" parent="ground_floor"]
+[node name="switch" parent="ground_floor/hallway_lights" instance=ExtResource("21_25kx7")]
+transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 12, 4.4, -58.8)
+
+[node name="lightCeiling_1" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -2.65613, 0.4, 3.8147e-06)
+
+[node name="lightCeiling_4" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.58113, 0.4, -2.12499)
+
+[node name="lightCeiling_6" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -7.08113, 0.4, -2.12499)
+
+[node name="lightCeiling_17" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -12.3311, 0.4, -2.12499)
+
+[node name="lightCeiling_18" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -16.8311, 0.4, -2.12499)
+
+[node name="lightCeiling_19" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -16.0811, 0.4, 6.87501)
+
+[node name="lightCeiling_21" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -19.1561, 0.4, 4.50001)
+
+[node name="lightCeiling_22" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -19.1561, 0.4, 6.19888e-06)
+
+[node name="lightCeiling_23" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -13.1561, 0.4, 5.72205e-06)
+
+[node name="lightCeiling_24" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -13.1561, 0.4, 4.50001)
+
+[node name="lightCeiling_25" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -19.1561, 0.4, -4.49999)
+
+[node name="lightCeiling_26" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -19.1561, 0.4, -8.99999)
+
+[node name="lightCeiling_27" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -13.1561, 0.4, -8.99999)
+
+[node name="lightCeiling_28" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -13.1561, 0.4, -4.49999)
+
+[node name="lightCeiling_20" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -16.0811, 0.4, -11.125)
+
+[node name="lightCeiling_5" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.16887, 0.4, -2.125)
+
+[node name="lightCeiling_7" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 5.66887, 0.4, -2.125)
+
+[node name="lightCeiling_8" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 10.9189, 0.4, -2.125)
+
+[node name="lightCeiling_2" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -2.65613, 0.4, 3.725)
+
+[node name="lightCeiling_3" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -2.65613, 0.4, 6.72501)
+
+[node name="lightCeiling_9" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.16887, 0.4, 6.85001)
+
+[node name="lightCeiling_10" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 5.66887, 0.4, 6.85001)
+
+[node name="lightCeiling_11" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 10.9189, 0.4, 6.85001)
+
+[node name="lightCeiling_12" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 8.06887, 0.4, 16.75)
+
+[node name="lightCeiling_13" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 8.06887, 0.4, 12.025)
+
+[node name="lightCeiling_14" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 8.06887, 0.4, 9.025)
+
+[node name="lightCeiling_15" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 8.06887, 0.4, 3.775)
+
+[node name="lightCeiling_16" parent="ground_floor/hallway_lights/switch" instance=ExtResource("21_s0be3")]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, 8.06887, 0.4, 0.775003)
 
 [node name="pod_room" type="Node3D" parent="ground_floor"]
 process_mode = 4
@@ -1401,7 +1525,6 @@ transform = Transform3D(1.39822e-06, -0.00239087, 0.999997, -0.000797053, 0.9999
 transform = Transform3D(1.39822e-06, -0.00239087, 0.999997, -0.000797053, 0.999997, 0.00239087, -1, -0.000797054, -5.0744e-07, 1.08074, 3, 0.0958495)
 
 [node name="basement" type="GridMap" parent="."]
-visible = false
 mesh_library = ExtResource("2_8ecpi")
 cell_size = Vector3(6, 2, 6)
 data = {
@@ -1549,6 +1672,51 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 33, 3,
 
 [node name="fan_noise40" parent="basement/turbine_sounds" instance=ExtResource("20_in16i")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 33, 3, -117)
+
+[node name="door_up_1" parent="basement" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0257, -1.12574, -29.5009)
+
+[node name="door_up_2" parent="basement" instance=ExtResource("14_i2sor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0257, -1.12574, -71.5009)
+
+[node name="Doors" type="Node3D" parent="basement"]
+visible = false
+
+[node name="door_gravity" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.625737, -1.12574, -33.0009)
+
+[node name="door_oxygen" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.625737, -1.12574, -51.0009)
+
+[node name="door_gen_1" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.02574, -1.12574, -94.0009)
+
+[node name="door_gen_2" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.02574, -1.12574, -88.0009)
+
+[node name="door_gen_3" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.02574, -1.12574, -82.0009)
+
+[node name="door_cells" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -38.9743, -1.12574, -78.0009)
+
+[node name="door_cell_1" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -41.3743, -1.12574, -87.0009)
+
+[node name="door_cell_2" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -41.3743, -1.12574, -93.0009)
+
+[node name="door_cell_3" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -41.3743, -1.12574, -99.0009)
+
+[node name="door_cell_6" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.5743, -1.12574, -99.0009)
+
+[node name="door_cell_5" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.5743, -1.12574, -93.0009)
+
+[node name="door_cell_4" parent="basement/Doors" instance=ExtResource("14_i2sor")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36.5743, -1.12574, -87.0009)
 
 [node name="Player" parent="." instance=ExtResource("2_g2hd0")]
 unique_name_in_owner = true
@@ -1735,7 +1903,7 @@ editor_description = "Transmits floor change"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 2, -39)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor_changers/to_ground_2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.5, 0)
 shape = SubResource("BoxShape3D_63231")
 
 [node name="to_ground_3" type="Area3D" parent="floor_changers"]
@@ -1751,7 +1919,7 @@ editor_description = "Transmits floor change"
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11.5, 2, -81)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor_changers/to_ground_4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.5, 0)
 shape = SubResource("BoxShape3D_63231")
 
 [node name="to_ground_5" type="Area3D" parent="floor_changers"]
@@ -1783,7 +1951,7 @@ editor_description = "Transmits floor change"
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.5, 2, -81)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor_changers/to_basement_1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.5, 0)
 shape = SubResource("BoxShape3D_63231")
 
 [node name="to_basement_2" type="Area3D" parent="floor_changers"]
@@ -1791,7 +1959,7 @@ editor_description = "Transmits floor change"
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.5, 2, -39)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor_changers/to_basement_2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.5, 0)
 shape = SubResource("BoxShape3D_63231")
 
 [node name="to_basement_3" type="Area3D" parent="floor_changers"]

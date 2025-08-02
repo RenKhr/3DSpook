@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2g285jee0xau"]
+[gd_scene load_steps=6 format=3 uid="uid://d2g285jee0xau"]
 
+[ext_resource type="ArrayOccluder3D" uid="uid://b6ntv3osi7lrl" path="res://Resources/door_piece_2.occ" id="2_iiwgc"]
 [ext_resource type="Material" uid="uid://jxt6it8qy3fl" path="res://Resources/Materials/m_enviro.tres" id="2_x0vvd"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xixpm"]
@@ -45,3 +46,6 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConcavePolygonShape3D_i1qp5")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("2_iiwgc")

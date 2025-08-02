@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dckec8po0r4yp"]
+[gd_scene load_steps=10 format=3 uid="uid://dckec8po0r4yp"]
 
 [ext_resource type="Script" path="res://Scripts/cleaning_cabinet.gd" id="1_awx55"]
 [ext_resource type="Material" uid="uid://jxt6it8qy3fl" path="res://Resources/Materials/m_enviro.tres" id="2_ctol7"]
 [ext_resource type="PackedScene" uid="uid://cak1jpyul45cn" path="res://Scenes/Objects/cleaning_cabinet_door.tscn" id="3_dry5d"]
+[ext_resource type="ArrayOccluder3D" uid="uid://btoq2lrswk5n" path="res://Resources/cleaning_cabinet.occ" id="4_7r35j"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ov3mg"]
 _surfaces = [{
@@ -100,6 +101,9 @@ shape = SubResource("ConcavePolygonShape3D_g32xj")
 libraries = {
 "": SubResource("AnimationLibrary_ubt6u")
 }
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("4_7r35j")
 
 [connection signal="press" from="." to="." method="_on_press"]
 [connection signal="press" from="cleaningCabinetDoor" to="." method="_on_press"]
