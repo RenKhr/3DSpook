@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bqy33rwx6p2gu"]
 
 [ext_resource type="Theme" uid="uid://boqcldsrhupj6" path="res://default_theme.tres" id="1_0x5o3"]
-[ext_resource type="Script" path="res://Scripts/pausemenu.gd" id="2_4djrw"]
+[ext_resource type="Script" uid="uid://cdc1nn30ctiq4" path="res://Scripts/pausemenu.gd" id="2_4djrw"]
 [ext_resource type="PackedScene" uid="uid://dlvvc6xxkthxq" path="res://Scenes/Objects/volume.tscn" id="3_ylkwo"]
 [ext_resource type="AudioStream" uid="uid://bba02f6mmvqbo" path="res://Resources/Sound/SFX/menu_button.ogg" id="4_av4nw"]
 [ext_resource type="AudioStream" uid="uid://yerj1h6istbe" path="res://Resources/Sound/SFX/menu_apply.ogg" id="5_yunxf"]
@@ -48,7 +48,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ibg1q"]
 _data = {
-"settings": SubResource("Animation_axrf0")
+&"settings": SubResource("Animation_axrf0")
 }
 
 [node name="pausemenu" type="Control"]
@@ -185,7 +185,7 @@ text = " Close "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ibg1q")
+&"": SubResource("AnimationLibrary_ibg1q")
 }
 
 [node name="button" type="AudioStreamPlayer" parent="."]

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://wowa3heul2ei"]
 
-[ext_resource type="Shader" path="res://Resources/Shaders/s_gunElectricity.gdshader" id="1_npwqt"]
+[ext_resource type="Shader" uid="uid://dt54qggdi7u4a" path="res://Resources/Shaders/s_gunElectricity.gdshader" id="1_npwqt"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gkk6e"]
 
@@ -12,7 +12,7 @@ noise = SubResource("FastNoiseLite_gkk6e")
 [resource]
 render_priority = 0
 shader = ExtResource("1_npwqt")
+shader_parameter/noise = SubResource("NoiseTexture2D_86b8e")
 shader_parameter/color = Vector3(0.1, 0.3, 0.8)
 shader_parameter/emissionStrength = 2.0
 shader_parameter/movementStrength = 0.3
-shader_parameter/noise = SubResource("NoiseTexture2D_86b8e")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cy7rcgsker83x"]
 
 [ext_resource type="Theme" uid="uid://boqcldsrhupj6" path="res://default_theme.tres" id="1_lt8fm"]
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_x7whk"]
+[ext_resource type="Script" uid="uid://0xoivfw8ris2" path="res://Scripts/menu.gd" id="1_x7whk"]
 [ext_resource type="PackedScene" uid="uid://dlvvc6xxkthxq" path="res://Scenes/Objects/volume.tscn" id="3_6ojtw"]
 [ext_resource type="AudioStream" uid="uid://dbtl0kyfe47kg" path="res://Resources/Sound/Music/Ambient Nothingness Main.ogg" id="4_1j1xb"]
 
@@ -55,7 +55,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vbjjm"]
 _data = {
-"Settings": SubResource("Animation_633bj")
+&"Settings": SubResource("Animation_633bj")
 }
 
 [node name="Menu" type="Control"]
@@ -194,7 +194,7 @@ text = " Close "
 
 [node name="MenuAnimations" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vbjjm")
+&"": SubResource("AnimationLibrary_vbjjm")
 }
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ds25triw57p7p"]
+[gd_scene load_steps=15 format=3 uid="uid://ds25triw57p7p"]
 
 [ext_resource type="PackedScene" uid="uid://det4vhq1t7ov0" path="res://Scenes/Objects/grid_map.tscn" id="1_67gpl"]
 [ext_resource type="PackedScene" uid="uid://c0diii2blledv" path="res://Scenes/PlayerScene.tscn" id="2_e6eja"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjdqtcuyp0tsi" path="res://Scenes/Objects/keycard_reader.tscn" id="6_preht"]
 [ext_resource type="PackedScene" uid="uid://dss2yxr6i24eq" path="res://Scenes/Objects/door.tscn" id="8_4vk86"]
 [ext_resource type="PackedScene" uid="uid://bub0r3q257xpe" path="res://Scenes/Items/keycard.tscn" id="8_bvbo6"]
+[ext_resource type="PackedScene" uid="uid://chq6voqfyvsg7" path="res://Scenes/Objects/computer_terminal.tscn" id="9_3aevr"]
 [ext_resource type="PackedScene" uid="uid://cl0s4y4pu18rq" path="res://Scenes/Objects/light_ceiling.tscn" id="10_pgtob"]
 [ext_resource type="PackedScene" uid="uid://xnkbca7fwn36" path="res://Scenes/Items/gun.tscn" id="10_pqd0o"]
 [ext_resource type="PackedScene" uid="uid://doo5mkpco72ha" path="res://Scenes/Objects/switch.tscn" id="11_62w3u"]
@@ -50,6 +51,7 @@ locked = true
 [node name="keycardReader" parent="door" instance=ExtResource("6_preht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18088, 1.09857, 0.8777)
 requiredColor = Color(0, 1, 0, 1)
+card_type = 1
 
 [node name="switch" parent="." instance=ExtResource("11_62w3u")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 6.56614, 2.29189, -11)
@@ -72,6 +74,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.02404, 1, -9.38622)
 iname = "Green Keycard"
 activated = true
 color = Color(0, 1, 0, 1)
+item_type = 1
+
+[node name="computerTerminal" parent="keycard2" instance=ExtResource("9_3aevr")]
+transform = Transform3D(-0.888697, 0, -0.458494, 0, 1, 0, 0.458494, 0, -0.888697, -6.62233, 0, 15.0042)
 
 [node name="gun" parent="." instance=ExtResource("10_pqd0o")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.04228, 1, -9.38972)
@@ -81,11 +87,11 @@ activated = true
 [node name="computerTerminal" parent="." instance=ExtResource("11_svlfh")]
 transform = Transform3D(-0.841982, 0, 0.539506, 0, 1, 0, -0.539506, 0, -0.841982, -4.3605, 0.908487, 6.02457)
 
+[node name="Quad" parent="computerTerminal/Monitor" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rrckg")
+
 [node name="ColorRect" parent="computerTerminal/Monitor/MonitorViewport" index="0"]
 z_index = 1
-
-[node name="Quad" parent="computerTerminal/Monitor" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_rrckg")
 
 [node name="CollisionShape3D" parent="computerTerminal/interact_zone" index="0"]
 shape = SubResource("BoxShape3D_dupqx")

@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://6mlcx54tryfu"]
+
+[ext_resource type="Shader" uid="uid://b5n3hh1cuyg04" path="res://Resources/Shaders/crt.gdshader" id="1_eap8f"]
+[ext_resource type="PackedScene" uid="uid://846fkm3naktt" path="res://Scenes/Objects/Computer Screens/monitor_control.tscn" id="1_nxcs6"]
+[ext_resource type="Script" uid="uid://dyno2ud4lkc2p" path="res://Scripts/MapItems/monitor_control.gd" id="1_ovi41"]
+[ext_resource type="Script" uid="uid://di8o2arujjwj" path="res://area_3d.gd" id="2_xr845"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxcs6"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ovi41"]
+viewport_path = NodePath("MonitorViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xr845"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ovi41")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xr845"]
+size = Vector3(1.9474, 0.0170288, 2.14832)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxcs6"]
+shader = ExtResource("1_eap8f")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.05
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.05
+shader_parameter/resolution = Vector2(200, 200)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.5
+shader_parameter/roll_size = 20.0
+shader_parameter/roll_variation = 1.6
+shader_parameter/distort_intensity = 0.03
+shader_parameter/noise_opacity = 0.2
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.02
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.2
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.5
+
+[node name="Whatthefuck" type="Node3D"]
+script = ExtResource("1_ovi41")
+
+[node name="Quad" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_nxcs6")
+surface_material_override/0 = SubResource("StandardMaterial3D_xr845")
+
+[node name="Area3D" type="Area3D" parent="Quad"]
+script = ExtResource("2_xr845")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0194626, 0, 0)
+shape = SubResource("BoxShape3D_xr845")
+
+[node name="MonitorViewport" type="SubViewport" parent="."]
+
+[node name="MonitorControl" parent="MonitorViewport" instance=ExtResource("1_nxcs6")]
+
+[node name="ColorRect" type="ColorRect" parent="MonitorViewport"]
+material = SubResource("ShaderMaterial_nxcs6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[connection signal="press" from="Quad/Area3D" to="." method="_on_area_3d_press"]

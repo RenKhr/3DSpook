@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://c0diii2blledv"]
 
-[ext_resource type="Script" path="res://Scripts/PlayerandItems/PlayerController.gd" id="1_yb3sx"]
+[ext_resource type="Script" uid="uid://cat20rmem2240" path="res://Scripts/PlayerandItems/PlayerController.gd" id="1_yb3sx"]
 [ext_resource type="PackedScene" uid="uid://bqy33rwx6p2gu" path="res://Scenes/pausemenu.tscn" id="2_c0kcq"]
 [ext_resource type="PackedScene" uid="uid://huhgi0dcuejl" path="res://Scenes/inventory.tscn" id="2_cmbys"]
 [ext_resource type="PackedScene" uid="uid://bub0r3q257xpe" path="res://Scenes/Items/keycard.tscn" id="3_dc1dr"]
@@ -53,7 +53,6 @@ random_pitch = 1.5
 random_volume_offset_db = 2.0
 streams_count = 1
 stream_0/stream = ExtResource("6_mg8ua")
-stream_0/weight = 1.0
 
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 safe_margin = 0.01

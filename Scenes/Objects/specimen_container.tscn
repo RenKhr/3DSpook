@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bpywse3ct1rfp" path="res://Resources/Models/Props/specimenContainerFrame.gltf" id="1_k2jmm"]
 [ext_resource type="Material" uid="uid://jxt6it8qy3fl" path="res://Resources/Materials/m_enviro.tres" id="2_kde1u"]
 [ext_resource type="PackedScene" uid="uid://bqj542tktkdku" path="res://Resources/Models/Props/SpecimenContainerGlass.gltf" id="3_wnaax"]
-[ext_resource type="Material" path="res://Resources/Materials/m_enviro_translucent.tres" id="4_hvj00"]
+[ext_resource type="Material" uid="uid://cka8b71lf5miw" path="res://Resources/Materials/m_enviro_translucent.tres" id="4_hvj00"]
 [ext_resource type="PackedScene" uid="uid://bwbpmcfe6tnxd" path="res://Resources/Models/Props/specimen.gltf" id="5_jtfyd"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mgg6j"]
@@ -26,7 +26,7 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0.29744, 0.60075, -0.3171, 3, 1, 0.2974
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tionf"]
 _data = {
-"specimenFloat": SubResource("Animation_6cs55")
+&"specimenFloat": SubResource("Animation_6cs55")
 }
 
 [sub_resource type="GDScript" id="GDScript_ysi06"]

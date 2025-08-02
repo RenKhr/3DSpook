@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://xnkbca7fwn36"]
 
-[ext_resource type="Script" path="res://Scripts/PlayerandItems/item.gd" id="1_8yroc"]
+[ext_resource type="Script" uid="uid://dv0pclrwv35av" path="res://Scripts/PlayerandItems/item.gd" id="1_8yroc"]
 [ext_resource type="Texture2D" uid="uid://d2tq56i86pqqk" path="res://Resources/Textures/placholder/ammohud.png" id="2_iib1o"]
 [ext_resource type="AudioStream" uid="uid://dw8121iv8mg0t" path="res://Resources/Sound/SFX/Electro Rifle Shot Single A.wav" id="3_ac34n"]
 
@@ -46,7 +46,6 @@ playback_mode = 1
 random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("3_ac34n")
-stream_0/weight = 1.0
 
 [node name="gun" type="StaticBody3D" groups=["gun"]]
 collision_layer = 2

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://doo5mkpco72ha"]
 
 [ext_resource type="PackedScene" uid="uid://b8eo6272c1txt" path="res://Scenes/Objects/switch_base.tscn" id="1_htl80"]
-[ext_resource type="Script" path="res://Scripts/MapItems/button.gd" id="1_iqpl1"]
+[ext_resource type="Script" uid="uid://cjn5hgj3bqmwn" path="res://Scripts/MapItems/button.gd" id="1_iqpl1"]
 [ext_resource type="PackedScene" uid="uid://dtow818sjl2bh" path="res://Scenes/Objects/switch_nub.tscn" id="2_28p6c"]
 [ext_resource type="AudioStream" uid="uid://c5yv4wn1nmqdf" path="res://Resources/Sound/SFX/switch.ogg" id="4_00ecd"]
 
@@ -18,7 +18,7 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 0, 0.0347619, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nryrt"]
 _data = {
-"switch_toggle": SubResource("Animation_sjry8")
+&"switch_toggle": SubResource("Animation_sjry8")
 }
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x3vjb"]

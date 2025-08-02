@@ -1,7 +1,25 @@
 [gd_scene load_steps=9 format=3 uid="uid://l8llsts52nv6"]
 
-[ext_resource type="Script" path="res://Scripts/MapItems/monitor_control.gd" id="1_4n4hh"]
-[ext_resource type="Shader" path="res://Resources/Shaders/crt.gdshader" id="2_2pssq"]
+[ext_resource type="Script" uid="uid://dyno2ud4lkc2p" path="res://Scripts/MapItems/monitor_control.gd" id="1_4n4hh"]
+[ext_resource type="Shader" uid="uid://b5n3hh1cuyg04" path="res://Resources/Shaders/crt.gdshader" id="2_2pssq"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bd8wp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ytm8i"]
+viewport_path = NodePath("MonitorViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a78q"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ytm8i")
+
+[sub_resource type="GDScript" id="GDScript_q67yb"]
+script/source = "extends Area3D
+
+signal press
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hma1g"]
+size = Vector3(2, 2, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o2pc3"]
 shader = ExtResource("2_2pssq")
@@ -27,33 +45,25 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.3
 shader_parameter/vignette_opacity = 0.5
 
-[sub_resource type="QuadMesh" id="QuadMesh_kmc5s"]
-size = Vector2(2, 2)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_r23pa"]
-viewport_path = NodePath("MonitorViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfkr1"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_r23pa")
-albedo_texture_force_srgb = true
-
-[sub_resource type="GDScript" id="GDScript_q67yb"]
-script/source = "extends Area3D
-
-signal press
-"
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hma1g"]
-size = Vector3(2, 2, 0.05)
-
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_4n4hh")
 
+[node name="Quad" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_bd8wp")
+surface_material_override/0 = SubResource("StandardMaterial3D_4a78q")
+
+[node name="Area3D" type="Area3D" parent="Quad"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+script = SubResource("GDScript_q67yb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D"]
+shape = SubResource("BoxShape3D_hma1g")
+
+[node name="cursor_timer" type="Timer" parent="."]
+wait_time = 1.2
+autostart = true
+
 [node name="MonitorViewport" type="SubViewport" parent="."]
-canvas_item_default_texture_filter = 0
-gui_embed_subwindows = true
-render_target_update_mode = 4
 
 [node name="ColorRect" type="ColorRect" parent="MonitorViewport"]
 material = SubResource("ShaderMaterial_o2pc3")
@@ -66,21 +76,5 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 metadata/_edit_lock_ = true
-
-[node name="Quad" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("QuadMesh_kmc5s")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_vfkr1")
-
-[node name="Area3D" type="Area3D" parent="Quad"]
-script = SubResource("GDScript_q67yb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D"]
-shape = SubResource("BoxShape3D_hma1g")
-
-[node name="cursor_timer" type="Timer" parent="."]
-wait_time = 1.2
-autostart = true
 
 [connection signal="press" from="Quad/Area3D" to="." method="_on_press"]
