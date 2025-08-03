@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-[gd_scene load_steps=10 format=3 uid="uid://dckec8po0r4yp"]
-=======
-[gd_scene load_steps=9 format=4 uid="uid://dckec8po0r4yp"]
->>>>>>> master
+[gd_scene load_steps=9 format=4 uid="uid://djm4j3eadl51e"]
 
-[ext_resource type="Script" uid="uid://cv1jl4v2oumyf" path="res://Scripts/cleaning_cabinet.gd" id="1_awx55"]
+[ext_resource type="Script" uid="uid://b7x4dxryflnpj" path="res://Scripts/cleaning_cabinet.gd" id="1_awx55"]
 [ext_resource type="Material" uid="uid://jxt6it8qy3fl" path="res://Resources/Materials/m_enviro.tres" id="2_ctol7"]
 [ext_resource type="PackedScene" uid="uid://cak1jpyul45cn" path="res://Scenes/Objects/cleaning_cabinet_door.tscn" id="3_dry5d"]
-[ext_resource type="ArrayOccluder3D" uid="uid://btoq2lrswk5n" path="res://Resources/cleaning_cabinet.occ" id="4_7r35j"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ov3mg"]
 _surfaces = [{
@@ -50,35 +45,13 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("cleaningCabinetDoor:rotation:x")
+tracks/0/path = NodePath("cleaningCabinetDoor:rotation:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("cleaningCabinetDoor:rotation:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.4, 0.158975, 2.44381, -0.4, -0.070401, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("cleaningCabinetDoor:rotation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ubt6u"]
@@ -103,11 +76,8 @@ shape = SubResource("ConcavePolygonShape3D_g32xj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ubt6u")
+&"": SubResource("AnimationLibrary_ubt6u")
 }
-
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = ExtResource("4_7r35j")
 
 [connection signal="press" from="." to="." method="_on_press"]
 [connection signal="press" from="cleaningCabinetDoor" to="." method="_on_press"]

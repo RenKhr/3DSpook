@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://jqkghpy5tl8k" path="res://Scenes/Objects/desk.tscn" id="4_kdct5"]
 [ext_resource type="PackedScene" uid="uid://kdsrjx6e1nuo" path="res://Scenes/Objects/chair.tscn" id="5_dmqyx"]
 [ext_resource type="PackedScene" uid="uid://chq6voqfyvsg7" path="res://Scenes/Objects/computer_terminal.tscn" id="6_3rebe"]
-[ext_resource type="PackedScene" uid="uid://dckec8po0r4yp" path="res://Scenes/Objects/cleaning_cabinet.tscn" id="8_x2dq7"]
+[ext_resource type="PackedScene" uid="uid://djm4j3eadl51e" path="res://Scenes/Objects/cleaning_cabinet.tscn" id="8_x2dq7"]
 [ext_resource type="PackedScene" uid="uid://orfrd76pbk04" path="res://Scenes/Objects/sleeping_pod_person.tscn" id="9_8n3c2"]
 [ext_resource type="PackedScene" uid="uid://fqwrra03hco2" path="res://Scenes/Objects/sleeping_pod.tscn" id="10_q174t"]
 [ext_resource type="PackedScene" uid="uid://bekp1sxjs5eo3" path="res://Scenes/Objects/server_rack.tscn" id="10_wf7r5"]

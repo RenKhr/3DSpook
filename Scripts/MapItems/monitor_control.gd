@@ -36,7 +36,6 @@ func _mouse_input_event(_camera: Camera3D, event: InputEvent, event_position: Ve
 	var event_pos2D: Vector2 = Vector2()
 
 	if is_mouse_inside:
-		print(event_pos3D)
 		event_pos2D = Vector2(event_pos3D.x, -event_pos3D.z)
 
 		event_pos2D.x = event_pos2D.x / quad_mesh_size.x
