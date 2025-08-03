@@ -10,7 +10,8 @@ var s
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if !scene == null:
-		s = scene.instantiate()
+		var loaded_scene = load(scene)
+		s = loaded_scene.instantiate()
 		screen.add_child(s)
 	else:
 		s = default_scene.instantiate()

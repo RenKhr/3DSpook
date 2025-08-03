@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dss2yxr6i24eq"]
 
-[ext_resource type="Script" path="res://Scripts/MapItems/door.gd" id="1_d8irx"]
+[ext_resource type="Script" uid="uid://b2bi25ctdhell" path="res://Scripts/MapItems/door.gd" id="1_d8irx"]
 [ext_resource type="PackedScene" uid="uid://bofol7x7rgw4c" path="res://Scenes/Objects/door_piece_1.tscn" id="1_hkf1k"]
 [ext_resource type="PackedScene" uid="uid://d2g285jee0xau" path="res://Scenes/Objects/door_piece_2.tscn" id="3_fm10n"]
 [ext_resource type="AudioStream" uid="uid://56rxw7nij05g" path="res://Resources/Sound/SFX/Door_Open.ogg" id="4_tjbox"]
@@ -25,7 +25,7 @@ tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, -0.0957814, 0, 0, 0.5,
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mak3r"]
 _data = {
-"door_open": SubResource("Animation_2wrxv")
+&"door_open": SubResource("Animation_2wrxv")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fumxv"]

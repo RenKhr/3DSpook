@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=3 uid="uid://coxk8353dayk"]
 
-[ext_resource type="Script" path="res://Scripts/map.gd" id="1_tbn5i"]
+[ext_resource type="Script" uid="uid://bao4prlul1d0u" path="res://Scripts/map.gd" id="1_tbn5i"]
 [ext_resource type="MeshLibrary" uid="uid://qmbiwgvlouyo" path="res://meshlibrary.tres" id="2_8ecpi"]
 [ext_resource type="PackedScene" uid="uid://c0diii2blledv" path="res://Scenes/PlayerScene.tscn" id="2_g2hd0"]
 [ext_resource type="PackedScene" uid="uid://jqkghpy5tl8k" path="res://Scenes/Objects/desk.tscn" id="4_kdct5"]
@@ -94,7 +94,6 @@ texture_filter = 0
 size = Vector3(1, 3, 4)
 
 [node name="map" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.7971)
 script = ExtResource("1_tbn5i")
 
 [node name="top_floor" type="GridMap" parent="."]

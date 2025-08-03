@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://eq5p4sr3dp0r"]
 
 [ext_resource type="Material" uid="uid://dg3kebt8c06ml" path="res://Resources/Materials/m_contract.tres" id="1_k66cg"]
-[ext_resource type="Script" path="res://Scripts/contractShaderHelper.gd" id="2_po32c"]
+[ext_resource type="Script" uid="uid://b7f4wtkfx1sn6" path="res://Scripts/contractShaderHelper.gd" id="2_po32c"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_k12bq"]
 material = ExtResource("1_k66cg")
