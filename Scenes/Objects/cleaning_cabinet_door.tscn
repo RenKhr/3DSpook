@@ -1,5 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://cak1jpyul45cn"]
 
+[ext_resource type="ArrayOccluder3D" uid="uid://crxcot7tiot4i" path="res://Resources/cleaning_cabinet_door.occ" id="2_fwjoj"]
 [ext_resource type="Material" uid="uid://jxt6it8qy3fl" path="res://Resources/Materials/m_enviro.tres" id="2_n1wk4"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h7h13"]
@@ -45,3 +46,6 @@ shape = SubResource("ConvexPolygonShape3D_h7h13")
 [node name="cleaningCabinetDoor" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_2iomy")
 skeleton = NodePath("")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("2_fwjoj")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ds25triw57p7p"]
+[gd_scene load_steps=15 format=3 uid="uid://ds25triw57p7p"]
 
 [ext_resource type="PackedScene" uid="uid://det4vhq1t7ov0" path="res://Scenes/Objects/grid_map.tscn" id="1_67gpl"]
 [ext_resource type="PackedScene" uid="uid://c0diii2blledv" path="res://Scenes/PlayerScene.tscn" id="2_e6eja"]
@@ -11,6 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://xnkbca7fwn36" path="res://Scenes/Items/gun.tscn" id="10_pqd0o"]
 [ext_resource type="PackedScene" uid="uid://doo5mkpco72ha" path="res://Scenes/Objects/switch.tscn" id="11_62w3u"]
 [ext_resource type="PackedScene" uid="uid://byg8e7qgmdhut" path="res://Scenes/Objects/computer_terminal_with_screen.tscn" id="11_svlfh"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3aevr"]
+viewport_path = NodePath("MonitorViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdw8u"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_3aevr")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dupqx"]
 resource_local_to_scene = true
@@ -75,6 +82,9 @@ activated = true
 
 [node name="computerTerminal" parent="." instance=ExtResource("11_svlfh")]
 transform = Transform3D(-0.841982, 0, 0.539506, 0, 1, 0, -0.539506, 0, -0.841982, -4.3605, 0.908487, 6.02457)
+
+[node name="Quad" parent="computerTerminal/Monitor" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xdw8u")
 
 [node name="ColorRect" parent="computerTerminal/Monitor/MonitorViewport" index="0"]
 z_index = 1

@@ -128,7 +128,6 @@ _data = {
 }
 
 [node name="lightCeiling" type="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00612623, 0, 0)
 script = ExtResource("1_cwsic")
 
 [node name="lightCeiling" type="MeshInstance3D" parent="."]
@@ -141,11 +140,16 @@ shape = SubResource("ConcavePolygonShape3D_dy4r3")
 [node name="lightCeiling_tube" parent="." instance=ExtResource("3_v1rn4")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0965662, -0.200382, -0.437332)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.094, -0.2, -0.437)
 layers = 3
+light_color = Color(0.882353, 1, 0.952941, 1)
+light_energy = 0.8
+light_bake_mode = 1
 shadow_enabled = true
+shadow_blur = 1.1
 distance_fade_enabled = true
 omni_range = 15.0
+omni_shadow_mode = 0
 
 [node name="FlickoffTimer" type="Timer" parent="."]
 
