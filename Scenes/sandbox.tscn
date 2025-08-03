@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://byg8e7qgmdhut" path="res://Scenes/Objects/computer_terminal_with_screen.tscn" id="11_svlfh"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3aevr"]
-viewport_path = NodePath("MonitorViewport")
+viewport_path = NodePath("computerTerminal/Monitor/MonitorViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdw8u"]
 resource_local_to_scene = true
@@ -86,7 +86,7 @@ transform = Transform3D(-0.841982, 0, 0.539506, 0, 1, 0, -0.539506, 0, -0.841982
 [node name="Quad" parent="computerTerminal/Monitor" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_xdw8u")
 
-[node name="ColorRect" parent="computerTerminal/Monitor/MonitorViewport" index="0"]
+[node name="ColorRect" parent="computerTerminal/Monitor/MonitorViewport" index="1"]
 z_index = 1
 
 [node name="CollisionShape3D" parent="computerTerminal/interact_zone" index="0"]
