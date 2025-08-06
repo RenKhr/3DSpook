@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://wowa3heul2ei"]
 
-[ext_resource type="Shader" uid="uid://c0te20wdbyiwb" path="res://Resources/Shaders/s_gunElectricity.gdshader" id="1_npwqt"]
+[ext_resource type="Shader" uid="uid://dt54qggdi7u4a" path="res://Resources/Shaders/s_gunElectricity.gdshader" id="1_npwqt"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gkk6e"]
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://chq6voqfyvsg7"]
+[gd_scene load_steps=7 format=4 uid="uid://chq6voqfyvsg7"]
 
 [ext_resource type="Material" uid="uid://jxt6it8qy3fl" path="res://Resources/Materials/m_enviro.tres" id="2_eytg5"]
-[ext_resource type="PackedScene" uid="uid://6mlcx54tryfu" path="res://whatthefuck.tscn" id="2_sqo2l"]
 [ext_resource type="PackedScene" uid="uid://ucvtqeps74kf" path="res://Scenes/Objects/interact_zone.tscn" id="3_q68b3"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jvfe6"]
@@ -51,9 +50,6 @@ shape = SubResource("ConcavePolygonShape3D_jvfe6")
 [node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_vdul6")
 skeleton = NodePath("")
-
-[node name="Whatthefuck" parent="." instance=ExtResource("2_sqo2l")]
-transform = Transform3D(0.5, 0, 0, 0, -0.00909267, -0.499917, 0, 0.499917, -0.00909267, 0.299577, 1.39494, -0.28658)
 
 [node name="interact_zone" parent="." instance=ExtResource("3_q68b3")]
 

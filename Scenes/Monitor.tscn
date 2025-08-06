@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://l8llsts52nv6"]
+[gd_scene load_steps=9 format=3 uid="uid://l8llsts52nv6"]
 
 [ext_resource type="Script" uid="uid://dyno2ud4lkc2p" path="res://Scripts/MapItems/monitor_control.gd" id="1_4n4hh"]
 [ext_resource type="Shader" uid="uid://uf0fg2pygkr2" path="res://Resources/Shaders/crt.gdshader" id="2_2pssq"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/Computer Screens/monitor_control.tscn" id="2_ytm8i"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bd8wp"]
 
@@ -65,8 +64,6 @@ wait_time = 1.2
 autostart = true
 
 [node name="MonitorViewport" type="SubViewport" parent="."]
-
-[node name="MonitorControl" parent="MonitorViewport" instance=ExtResource("2_ytm8i")]
 
 [node name="ColorRect" type="ColorRect" parent="MonitorViewport"]
 material = SubResource("ShaderMaterial_o2pc3")
