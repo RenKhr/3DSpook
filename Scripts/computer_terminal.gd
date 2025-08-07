@@ -12,7 +12,7 @@ func _ready():
 	if !scene == null:
 		var loaded_scene = load(scene)
 		s = loaded_scene.instantiate()
-		screen.add_child(s)
+		screen.get_child(0).add_sibling(s)
 	else:
 		s = default_scene.instantiate()
 		screen.add_child(s)

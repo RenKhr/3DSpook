@@ -76,12 +76,12 @@ activated = true
 [node name="computerTerminal" parent="." instance=ExtResource("11_svlfh")]
 transform = Transform3D(-0.841982, 0, 0.539506, 0, 1, 0, -0.539506, 0, -0.841982, -4.3605, 0.908487, 6.02457)
 
-[node name="ColorRect" parent="computerTerminal/Monitor/MonitorViewport" index="0"]
-z_index = 1
-
 [node name="CollisionShape3D" parent="computerTerminal/interact_zone" index="0"]
 shape = SubResource("BoxShape3D_dupqx")
 
+[node name="ComputerTerminal" parent="." instance=ExtResource("11_svlfh")]
+transform = Transform3D(-0.541782, 0, 0.840519, 0, 1, 0, -0.840519, 0, -0.541782, -6.22942, 1.03764, 4.75678)
+scene = "uid://b2xf1ng2beowx"
+
 [editable path="computerTerminal"]
-[editable path="computerTerminal/Monitor"]
 [editable path="computerTerminal/interact_zone"]
