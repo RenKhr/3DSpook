@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://xnkbca7fwn36"]
 
-[ext_resource type="Script" uid="uid://dv0pclrwv35av" path="res://Scripts/PlayerandItems/item.gd" id="1_8yroc"]
+[ext_resource type="Script" uid="uid://bhcy1nxixfsjh" path="res://Scripts/PlayerandItems/stunGun.gd" id="1_pq3s3"]
 [ext_resource type="Texture2D" uid="uid://d2tq56i86pqqk" path="res://Resources/Textures/placholder/ammohud.png" id="2_iib1o"]
 [ext_resource type="AudioStream" uid="uid://dw8121iv8mg0t" path="res://Resources/Sound/SFX/Electro Rifle Shot Single A.wav" id="3_ac34n"]
 
@@ -50,7 +50,7 @@ stream_0/stream = ExtResource("3_ac34n")
 [node name="gun" type="StaticBody3D" groups=["gun"]]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_8yroc")
+script = ExtResource("1_pq3s3")
 
 [node name="barrel" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.0767571, 0.0657897, 0)

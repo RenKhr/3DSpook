@@ -1,6 +1,6 @@
 extends Node3D
 
-var item_list = []
+var item_list = {}
 var held_item
 var index
 var last_equipped
@@ -13,7 +13,8 @@ func _ready():
 		if child.has_signal("press"):
 			item_list.append(child)
 	index = 0
-	held_item = item_list[index]
+	if !item_list.is_empty():
+		held_item = item_list[index]
 
 # Pickup an item if holding null
 func obtainItem(item):

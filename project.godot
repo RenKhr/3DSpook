@@ -12,7 +12,7 @@ config_version=5
 
 config/name="3D Spook"
 run/main_scene="res://Scenes/sandbox.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/image="res://Resources/Textures/placholder/spookybg.png"
 config/icon="res://icon.svg"
 
@@ -22,9 +22,6 @@ Player="*res://Scripts/PlayerandItems/player_var.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/ios/allow_high_refresh_rate=false

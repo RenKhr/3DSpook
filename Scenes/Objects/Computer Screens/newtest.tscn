@@ -5,12 +5,45 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 512.0
 offset_bottom = 512.0
 
-[node name="Button" type="Button" parent="."]
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 317.0
-offset_right = 277.0
-offset_bottom = 375.0
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="Container" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 510.0
+
+[node name="Button" type="Button" parent="Container"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+text = "Generator"
+autowrap_mode = 1
+
+[node name="TextContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 170.0
+offset_top = 10.0
+offset_right = 502.0
+offset_bottom = 502.0
+
+[node name="ComputerText" type="RichTextLabel" parent="TextContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "ssssssssssss"

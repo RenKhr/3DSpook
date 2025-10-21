@@ -1,51 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://c0diii2blledv"]
+[gd_scene load_steps=10 format=3 uid="uid://c0diii2blledv"]
 
-[ext_resource type="Script" uid="uid://bdh1m82rmgq3i" path="res://Scripts/PlayerandItems/PlayerController.gd" id="1_yb3sx"]
+[ext_resource type="Script" uid="uid://cat20rmem2240" path="res://Scripts/PlayerandItems/PlayerController.gd" id="1_xwiga"]
 [ext_resource type="PackedScene" uid="uid://bqy33rwx6p2gu" path="res://Scenes/pausemenu.tscn" id="2_c0kcq"]
 [ext_resource type="PackedScene" uid="uid://huhgi0dcuejl" path="res://Scenes/inventory.tscn" id="2_cmbys"]
-[ext_resource type="PackedScene" uid="uid://bub0r3q257xpe" path="res://Scenes/Items/keycard.tscn" id="3_dc1dr"]
-[ext_resource type="PackedScene" uid="uid://xnkbca7fwn36" path="res://Scenes/Items/gun.tscn" id="4_tioku"]
-[ext_resource type="Texture2D" uid="uid://ckmjux0tul4xy" path="res://Resources/Textures/keycards.png" id="5_fndha"]
+[ext_resource type="Script" uid="uid://ccis4h1w4vupa" path="res://Scripts/PlayerandItems/newInventory.gd" id="3_6nwty"]
+[ext_resource type="Script" uid="uid://dv0pclrwv35av" path="res://Scripts/PlayerandItems/item.gd" id="4_uuggy"]
 [ext_resource type="AudioStream" uid="uid://nhmaa8pk8xqh" path="res://Resources/Sound/SFX/step_metal.ogg" id="6_mg8ua"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c26a"]
-resource_local_to_scene = true
-albedo_color = Color(0.313726, 0.321569, 0.756863, 1)
-albedo_texture = ExtResource("5_fndha")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6vft"]
-resource_local_to_scene = true
-albedo_color = Color(0.313726, 0.321569, 0.756863, 1)
-albedo_texture = ExtResource("5_fndha")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ce6gq"]
-resource_local_to_scene = true
-albedo_color = Color(0.313726, 0.321569, 0.756863, 1)
-albedo_texture = ExtResource("5_fndha")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kgxvl"]
-resource_local_to_scene = true
-albedo_color = Color(0.313726, 0.321569, 0.756863, 1)
-albedo_texture = ExtResource("5_fndha")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl4c0"]
-resource_local_to_scene = true
-albedo_color = Color(0.313726, 0.321569, 0.756863, 1)
-albedo_texture = ExtResource("5_fndha")
-texture_filter = 0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0j8gy"]
 height = 4.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rjcbi"]
 height = 4.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_iedih"]
-size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8wdyx"]
 playback_mode = 1
@@ -56,54 +22,17 @@ stream_0/stream = ExtResource("6_mg8ua")
 
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 safe_margin = 0.01
-script = ExtResource("1_yb3sx")
+script = ExtResource("1_xwiga")
 
 [node name="inventory" parent="." instance=ExtResource("2_cmbys")]
 unique_name_in_owner = true
+script = ExtResource("3_6nwty")
 
-[node name="gun" parent="inventory" instance=ExtResource("4_tioku")]
-transform = Transform3D(0.0100197, -0.0899371, -0.995897, 0.993851, 0.110723, -1.09256e-08, 0.110269, -0.989774, 0.0904935, 0.366865, 0, -0.553441)
-iname = "Stun Gun"
-
-[node name="blue_keycard" parent="inventory" instance=ExtResource("3_dc1dr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.533012, 0, -0.739092)
-iname = "Blue Keycard"
-color = Color(0, 0, 1, 1)
-
-[node name="Mesh2" parent="inventory/blue_keycard" index="1"]
-material_override = SubResource("StandardMaterial3D_2c26a")
-
-[node name="green_keycard" parent="inventory" instance=ExtResource("3_dc1dr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.343276, 0, -0.828928)
-iname = "Green Keycard"
-color = Color(0, 0.980392, 0.576471, 1)
-
-[node name="Mesh2" parent="inventory/green_keycard" index="1"]
-material_override = SubResource("StandardMaterial3D_e6vft")
-
-[node name="orange_keycard" parent="inventory" instance=ExtResource("3_dc1dr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.139259, 0, -0.872987)
-iname = "Orange Keycard"
-color = Color(1, 0.313726, 0, 1)
-
-[node name="Mesh2" parent="inventory/orange_keycard" index="1"]
-material_override = SubResource("StandardMaterial3D_ce6gq")
-
-[node name="yellow_keycard" parent="inventory" instance=ExtResource("3_dc1dr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.191983, -0.125177, -0.722548)
-iname = "Yellow Keycard"
-color = Color(1, 1, 0, 1)
-
-[node name="Mesh2" parent="inventory/yellow_keycard" index="1"]
-material_override = SubResource("StandardMaterial3D_kgxvl")
-
-[node name="purple_keycard" parent="inventory" instance=ExtResource("3_dc1dr")]
-transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, -0.452602, -0.121064, -0.637224)
-iname = "Test Keycard"
-color = Color(0.5, 0, 1, 1)
-
-[node name="Mesh2" parent="inventory/purple_keycard" index="1"]
-material_override = SubResource("StandardMaterial3D_rl4c0")
+[node name="EmptyHand" type="MeshInstance3D" parent="inventory"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79706, 0.88582206, -1.7467281)
+layers = 2
+skeleton = NodePath("../../Pivot/Hand")
+script = ExtResource("4_uuggy")
 
 [node name="pausemenu" parent="." instance=ExtResource("2_c0kcq")]
 z_index = 1
@@ -160,7 +89,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="Pivot/head/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1920, 1080)
+size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="viewmodel" type="Camera3D" parent="Pivot/head/SubViewportContainer/SubViewport"]
@@ -172,10 +101,6 @@ fov = 90.0
 [node name="Hand" type="Marker3D" parent="Pivot"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79706, -0.753778, -1.18481)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Hand"]
-layers = 2
-mesh = SubResource("BoxMesh_iedih")
 
 [node name="crosshair" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -213,10 +138,3 @@ bus = &"Sfx"
 [connection signal="timeout" from="ammo_charge" to="." method="_on_ammo_charge_timeout"]
 [connection signal="timeout" from="steps" to="." method="_on_steps_timeout"]
 [connection signal="timeout" from="sprint" to="." method="_on_steps_timeout"]
-
-[editable path="inventory/gun"]
-[editable path="inventory/blue_keycard"]
-[editable path="inventory/green_keycard"]
-[editable path="inventory/orange_keycard"]
-[editable path="inventory/yellow_keycard"]
-[editable path="inventory/purple_keycard"]

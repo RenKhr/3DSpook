@@ -39,21 +39,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_b4lf3")
 
-[node name="keycard" type="StaticBody3D"]
+[node name="Keycard" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_4kq0j")
+mesh = NodePath("Mesh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_3o4h4")
 
-[node name="Mesh2" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 layers = 2
 material_override = ExtResource("2_1uev8")
 mesh = SubResource("ArrayMesh_kgv3h")
 skeleton = NodePath("")
 
-[node name="label" type="Label3D" parent="."]
+[node name="Text" type="Label3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.035, 0.02, 0.002)
 layers = 2
 pixel_size = 0.004
@@ -67,7 +68,7 @@ font_size = 16
 outline_size = 0
 horizontal_alignment = 0
 
-[node name="label2" type="Label3D" parent="."]
+[node name="TextShadow" type="Label3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.038, 0.023, 0.001)
 layers = 2
 pixel_size = 0.004
