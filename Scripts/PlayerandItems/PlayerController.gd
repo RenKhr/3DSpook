@@ -15,7 +15,8 @@ var input_dir = Vector3(0, 0, 0)
 var jumped
 var base_fov = 90
 var fov_change = 1.5
-
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -45,8 +46,7 @@ func _unhandled_input(event):
 			%flashlight.visible = true
 	elif Input.is_action_just_pressed("showmouse") and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
 
 # Raycasting code for interacting with the environment
 func raycast_from_mouse(r_length):

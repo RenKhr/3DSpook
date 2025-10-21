@@ -12,7 +12,8 @@ func _ready():
 # Pickup an item
 func add_item(item: Item):
 	item.reparent(self, false)
-	item_list[get_child_count()-1] = item
+	item.position = %inventory.position
+	item_list[item_list.size()] = item
 	print(item_list)
 
 func get_current_item():
@@ -33,9 +34,15 @@ func change_held_item(input):
 		else:
 			index-=1
 	held_item = item_list[index]
+	previous_held_item.rotation_degrees = Vector3(-45, 0, 0)
+	if previous_held_item.has_node("ammo"):
+		previous_held_item.rotation_degrees = Vector3( 0, -90, 70)
+	previous_held_item.scale = Vector3(1, 1, 1)
 	equip_to_hand(held_item, previous_held_item)
 
 func equip_to_hand(item, previous_held_item):
 	item.reparent(%Hand, false)
 	previous_held_item.reparent(%inventory, false)
 	item.position = %Hand.position
+	held_item.rotation_degrees = Vector3(0, -90, 0)
+	held_item.scale = Vector3(2, 2, 2)
