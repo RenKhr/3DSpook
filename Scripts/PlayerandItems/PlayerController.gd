@@ -97,7 +97,7 @@ func _physics_process(delta):
 		result = raycast_from_mouse(ray_length)
 		if result:
 			if inventory.get_current_item() != null:
-				inventory.get_current_item().useItem(result["collider"])
+				inventory.get_current_item().use_item(result["collider"])
 			if result["collider"].has_signal("press"):
 				result["collider"].press.emit()
 

@@ -21,21 +21,22 @@ func _on_exit_teleport_body_entered(body:Node3D):
 func _floor_change(body:Node3D,floor_nr):
 
 	if body.name == "Player":
-		top_fans.process_mode = Node.PROCESS_MODE_DISABLED
-		ground_fans.process_mode = Node.PROCESS_MODE_DISABLED
-		basement_fans.process_mode = Node.PROCESS_MODE_DISABLED
-		top_doors.visible = false
-		ground_doors.visible = false
-		basement_doors.visible = false
+		pass
+		#top_fans.process_mode = Node.PROCESS_MODE_DISABLED
+		#ground_fans.process_mode = Node.PROCESS_MODE_DISABLED
+		#basement_fans.process_mode = Node.PROCESS_MODE_DISABLED
+		#top_doors.visible = false
+		#ground_doors.visible = false
+		#basement_doors.visible = false
 
 		
 		match floor_nr:
 			0:
 				top_fans.process_mode = Node.PROCESS_MODE_INHERIT
-				top_doors.visible = true
+				#top_doors.visible = true
 			1:
 				ground_fans.process_mode = Node.PROCESS_MODE_INHERIT
-				ground_doors.visible = true
+				#ground_doors.visible = true
 			2:
 				basement_fans.process_mode = Node.PROCESS_MODE_INHERIT
-				basement_doors.visible = true
+				#basement_doors.visible = true

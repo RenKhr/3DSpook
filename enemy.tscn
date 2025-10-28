@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://b53jlc57ckl45"]
+
+[ext_resource type="Script" uid="uid://c5ii2qj4g5hb" path="res://enemytest.gd" id="1_7k104"]
+[ext_resource type="AudioStream" uid="uid://d35lxjt6fg70i" path="res://Re-Logic - Terraria Soundtrack - 08 Corruption.mp3" id="2_4gyqm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gyqm"]
+albedo_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+clearcoat_enabled = true
+clearcoat = 0.2
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7k104"]
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4gyqm"]
+
+[node name="enemy" type="CharacterBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_7k104")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_7k104")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4gyqm")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_postprocessing = 1
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="spookymusic" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_4gyqm")
+volume_db = -30.0
+unit_size = 15.0
+panning_strength = 0.7
+bus = &"Music"
+parameters/looping = true
+
+[node name="red" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.5, -0.45000002)
+light_color = Color(1, 0, 0, 1)
+
+[node name="red2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.5, -0.45000002)
+light_color = Color(1, 0, 0, 1)

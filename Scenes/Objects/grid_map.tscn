@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://det4vhq1t7ov0"]
 
-[ext_resource type="MeshLibrary" uid="uid://qmbiwgvlouyo" path="res://meshlibrary.tres" id="1_6bjcu"]
+[ext_resource type="MeshLibrary" uid="uid://b7kkr7ecg3ody" path="res://meshlibrary.tres" id="1_dd8a6"]
 
 [node name="GridMap" type="GridMap"]
-mesh_library = ExtResource("1_6bjcu")
+mesh_library = ExtResource("1_dd8a6")
 cell_size = Vector3(6, 2, 6)
 bake_navigation = true
 metadata/_editor_floor_ = Vector3(0, 0, 0)

@@ -56,3 +56,13 @@ func _on_player_detected(body:Node3D):
 		if !locked:
 			if $closeTimer.wait_time < 0 or !open:
 				openDoor()
+	if body.name == "enemy":
+		if $closeTimer.wait_time < 0 or !open:
+				openDoor()
+		#else:
+			#$closeTimer.paused = true
+
+
+func _on_player_detect_body_exited(body: Node3D):
+	if body.name == "enemy":
+		$closeTimer.paused = false

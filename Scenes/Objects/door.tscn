@@ -14,14 +14,14 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("door_piece 1")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 0.0348265, 0, 0, 0.5, 1, 0.2, 0, 0, 1, 1, 1, 0, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 0.0348265, 0, 0, 0.5, 1, 0.2, 0, 0, 1, 1, 1.7, 0, 0)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("door_piece 2")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, -0.0957814, 0, 0, 0.5, 1, -0.2, 0, 0, 1, 1, -1, 0, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, -0.0957814, 0, 0, 0.5, 1, -0.2, 0, 0, 1, 1, -1.7, 0, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mak3r"]
 _data = {
@@ -29,7 +29,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fumxv"]
-size = Vector3(3, 4, 3)
+size = Vector3(5, 4, 5)
 
 [node name="door" type="Node3D"]
 script = ExtResource("1_d8irx")
@@ -40,7 +40,7 @@ script = ExtResource("1_d8irx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_mak3r")
+&"": SubResource("AnimationLibrary_mak3r")
 }
 
 [node name="closeTimer" type="Timer" parent="."]
@@ -63,9 +63,10 @@ bus = &"Sfx"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.12)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player_detect"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 7.450581e-09)
 shape = SubResource("BoxShape3D_fumxv")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="closeTimer" to="." method="_on_close_timer_timeout"]
 [connection signal="body_entered" from="player_detect" to="." method="_on_player_detected"]
+[connection signal="body_exited" from="player_detect" to="." method="_on_player_detect_body_exited"]
