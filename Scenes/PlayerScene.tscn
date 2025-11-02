@@ -49,7 +49,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6396, -0.561918)
 
 [node name="head" type="Camera3D" parent="Pivot"]
 unique_name_in_owner = true
-cull_mask = 1048573
 current = true
 fov = 90.0
 
@@ -87,6 +86,7 @@ mouse_filter = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Pivot/head/SubViewportContainer"]
+own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(1152, 648)

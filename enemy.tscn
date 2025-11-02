@@ -45,8 +45,9 @@ light_color = Color(1, 0, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.5, -0.45000002)
 light_color = Color(1, 0, 0, 1)
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="viewport" type="SubViewport" parent="."]
+handle_input_locally = false
+render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49566257, -0.31332266)
-fov = 90.0
+[node name="camera" type="Camera3D" parent="viewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49566257, -0.26332265)

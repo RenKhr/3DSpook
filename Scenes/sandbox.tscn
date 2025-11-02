@@ -20,7 +20,7 @@ size = Vector3(1.2, 1.8, 1.1)
 [node name="sandbox" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_e6eja")]
-transform = Transform3D(-0.274352, 0, 0.12137, 0, 0.3, 0, -0.12137, 0, -0.274352, -1.24372, 1.99026, 2.45862)
+transform = Transform3D(-0.274352, 0, 0.12137, 0, 0.3, 0, -0.12137, 0, -0.274352, -1.24372, 1.99026, 4.70862)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_dbgfh")
@@ -72,7 +72,7 @@ transform = Transform3D(-0.541782, 0, 0.840519, 0, 1, 0, -0.840519, 0, -0.541782
 scene = "uid://b2xf1ng2beowx"
 
 [node name="enemy" parent="." groups=["enemy"] instance=ExtResource("12_xdw8u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.968784, 1.9327775, -2.2347248)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.75, 2.25, -2.5)
 
 [editable path="computerTerminal"]
 [editable path="computerTerminal/interact_zone"]

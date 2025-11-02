@@ -14,6 +14,8 @@ func _ready():
 	$spookymusic.play()
 
 func _physics_process(delta):
+	$viewport/camera.position = global_position
+	$viewport/camera.rotation = self.rotation
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
