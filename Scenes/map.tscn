@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c0diii2blledv" path="res://Scenes/PlayerScene.tscn" id="2_g2hd0"]
 [ext_resource type="MeshLibrary" uid="uid://lvj73quttipx" path="res://navigationmeshlib.tres" id="2_macow"]
 [ext_resource type="PackedScene" uid="uid://jqkghpy5tl8k" path="res://Scenes/Objects/desk.tscn" id="4_kdct5"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/cleaning_cabinet.tscn" id="8_x2dq7"]
+[ext_resource type="PackedScene" uid="uid://djm4j3eadl51e" path="res://Scenes/Objects/cleaning_cabinet.tscn" id="8_x2dq7"]
 [ext_resource type="PackedScene" uid="uid://b1tpcwt4atbs6" path="res://Scenes/Objects/cup.tscn" id="13_e0n3e"]
 [ext_resource type="PackedScene" uid="uid://cjdqtcuyp0tsi" path="res://Scenes/Objects/keycard_reader.tscn" id="14_62ocp"]
 [ext_resource type="Environment" uid="uid://df4oq6kaiqjj4" path="res://Resources/greenfog.tres" id="14_83lq4"]
@@ -1393,9 +1393,8 @@ bus = &"Music"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("14_83lq4")
 
-[node name="enemy" parent="." instance=ExtResource("22_macow")]
+[node name="enemy" parent="." groups=["enemy"] instance=ExtResource("22_macow")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 12, -57)
-SPEED = 5
 
 [connection signal="body_entered" from="exit_teleport" to="." method="_on_exit_teleport_body_entered"]
 [connection signal="body_exited" from="floor_changers/to_ground_1" to="." method="_floor_change" binds= [1]]

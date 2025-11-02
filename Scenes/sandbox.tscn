@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ds25triw57p7p"]
+[gd_scene load_steps=14 format=3 uid="uid://ds25triw57p7p"]
 
 [ext_resource type="PackedScene" uid="uid://det4vhq1t7ov0" path="res://Scenes/Objects/grid_map.tscn" id="1_67gpl"]
 [ext_resource type="PackedScene" uid="uid://c0diii2blledv" path="res://Scenes/PlayerScene.tscn" id="2_e6eja"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://xnkbca7fwn36" path="res://Scenes/Items/gun.tscn" id="10_pqd0o"]
 [ext_resource type="PackedScene" uid="uid://doo5mkpco72ha" path="res://Scenes/Objects/switch.tscn" id="11_62w3u"]
 [ext_resource type="PackedScene" uid="uid://byg8e7qgmdhut" path="res://Scenes/Objects/computer_terminal_with_screen.tscn" id="11_svlfh"]
+[ext_resource type="PackedScene" uid="uid://b53jlc57ckl45" path="res://enemy.tscn" id="12_xdw8u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dupqx"]
 resource_local_to_scene = true
@@ -28,7 +29,6 @@ environment = ExtResource("3_dbgfh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.01, 1.5, 3.259)
 
 [node name="GridMap" parent="." instance=ExtResource("1_67gpl")]
-bake_navigation = false
 data = {
 "cells": PackedInt32Array(65535, 65535, 0, 65535, 65534, 4, 0, 65534, 655364, 65534, 65534, 1048580, 65534, 65535, 1441795, 65533, 65535, 1441792, 65532, 65535, 1441797, 65532, 65534, 2, 65531, 65535, 1048578, 65532, 0, 655362, 65534, 65533, 1048579, 0, 65533, 3, 65535, 65533, 655364, 65535, 65532, 2, 1, 65534, 3, 1, 65535, 655362, 0, 0, 7, 65534, 0, 1048583, 0, 2, 1441805, 65535, 0, 8, 65534, 1, 1048589, 0, 1, 1441805, 65535, 1, 1441802, 65534, 2, 1048589, 65534, 3, 655367, 0, 3, 1441799, 65535, 3, 655373)
 }
@@ -70,6 +70,9 @@ shape = SubResource("BoxShape3D_dupqx")
 [node name="ComputerTerminal" parent="." instance=ExtResource("11_svlfh")]
 transform = Transform3D(-0.541782, 0, 0.840519, 0, 1, 0, -0.840519, 0, -0.541782, -6.22942, 1.03764, 4.75678)
 scene = "uid://b2xf1ng2beowx"
+
+[node name="enemy" parent="." groups=["enemy"] instance=ExtResource("12_xdw8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.968784, 1.9327775, -2.2347248)
 
 [editable path="computerTerminal"]
 [editable path="computerTerminal/interact_zone"]

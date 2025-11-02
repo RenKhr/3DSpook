@@ -4,7 +4,7 @@ extends Node3D
 @export var item_name := ""
 @export var color: Color
 @export var mesh: MeshInstance3D
-
+@onready var collision_shape := $CollisionShape3D
 var original_position: Vector3
 var player
 

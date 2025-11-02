@@ -44,3 +44,9 @@ light_color = Color(1, 0, 0, 1)
 [node name="red2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.5, -0.45000002)
 light_color = Color(1, 0, 0, 1)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49566257, -0.31332266)
+fov = 90.0

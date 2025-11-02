@@ -34,7 +34,7 @@ func change_held_item(input):
 		else:
 			index-=1
 	held_item = item_list[index]
-	previous_held_item.rotation_degrees = Vector3(-45, 0, 0)
+	#previous_held_item.rotation_degrees = Vector3(-45, 0, 0)
 	if previous_held_item.has_node("ammo"):
 		previous_held_item.rotation_degrees = Vector3( 0, -90, 70)
 	previous_held_item.scale = Vector3(1, 1, 1)
